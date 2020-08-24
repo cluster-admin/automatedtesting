@@ -44,7 +44,6 @@ class HandleDB:
 if __name__ == '__main__':
     pass
     a =HandleDB()
-    111111
     b =a.get_all(1)
     print(b)
 
