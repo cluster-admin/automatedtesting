@@ -45,5 +45,6 @@ if __name__ == '__main__':
     pass
     a =HandleDB()
     b =a.get_all(1)
+    12312312
     print(b)
 
