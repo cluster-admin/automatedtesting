@@ -15,11 +15,15 @@ data =yaml.load(f,Loader=yaml.FullLoader)
 
 class HandleDB:
 
+
+
     def __init__(self):
-        self.con = pymysql.connect(
-            host=data['db']['host'],user=data['db']['user'],
-            password=str(data['db']['password']),port=data['db']['port'],
-            charset=data['db']['charset'],database=data['db']['database'])
+        self.con = pymysql.connect(host=data['db']['host'],
+                                   user=data['db']['user'],
+                                   password=data['db']['password'],
+                                   port=data['db']['port'],
+                                   charset=data['db']['charset'],
+                                   database=data['db']['database'])
         self.cur = self.con.cursor()
 
     def get_one(self, sql):
@@ -42,9 +46,8 @@ class HandleDB:
         self.con.close()
 
 if __name__ == '__main__':
-    pass
+
     a =HandleDB()
-    b =a.get_all(1)
-    12312312
-    print(b)
+    print(a.get_one('show tables'))
+
 
