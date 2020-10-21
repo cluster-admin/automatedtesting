@@ -14,9 +14,6 @@ data =yaml.load(f,Loader=yaml.FullLoader)
 
 
 class HandleDB:
-
-
-
     def __init__(self):
         self.con = pymysql.connect(host=data['db']['host'],
                                    user=data['db']['user'],
@@ -41,6 +38,8 @@ class HandleDB:
         res = self.cur.execute(sql)
         return res
 
+
+
     def close(self):
         self.cur.close()
         self.con.close()
@@ -48,6 +47,4 @@ class HandleDB:
 if __name__ == '__main__':
 
     a =HandleDB()
-    print(a.get_one('show tables'))
-
 
