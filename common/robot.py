@@ -5,12 +5,15 @@
 """
 from common.mysql import *
 import requests,random,time
-class Amr():
+
+
+class Robot():
 
 
     def task_status(self):
         """返回任务状态"""
-        return HandleDB().get_one("SELECT status FROM  t_carry_order WHERE origin_order_no ORDER BY create_time DESC LIMIT 1")[0]
+        return Mysql().select('select ')
+
 
     def task_import(self):
         """任务导入成功"""
@@ -78,6 +81,7 @@ class Amr():
                 time.sleep(10)
                 print("继续查询")
 
+
     def arrive_early(self):
         '''提前到达'''
         url = "http://10.3.0.207:7000/api/jobs/finish"
@@ -85,6 +89,7 @@ class Amr():
         headers = {}
         response = requests.request("POST", url, headers=headers, data=payload)
         print(response.text.encode('utf8'))
+
 
     def resume_sub_task(self):
         """异常转人工：完成"""
@@ -95,4 +100,5 @@ class Amr():
         print(response.text.encode('utf8'))
 
 if __name__ == '__main__':
-    pass
+    a = Robot()
+    print(a.task_status())

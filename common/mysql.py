@@ -1,50 +1,46 @@
-# -*- coding: utf-8 -*-
-"""
-@author: yuyang
-@time: 2020/8/1 15:46
-"""
+import pymysql
+from common.settings import configData
+
+data = configData()['mysql']
+
+class Mysql():
+    '''数据库操作'''
+
+    def __init__(self,databaseName='test_tcljx_rpm'):
+        self.db = pymysql.connect(host= data['host'],
+                                 user = data['user'],
+                                 password = data['password'],
+                                 port = data['port'],
+                                 charset = data['charset'],
+                                 database= databaseName)
+        self.c = self.db.cursor()
 
 
-import pymysql,yaml
+    def select(self,sql,fetch=True):
+        '''
+        :param sql: 执行语句
+        :param fetch: 返回one/all
+        :return:
+        '''
+        try:
+            self.c.execute(sql)
+        except:
+            self.db.rollback()
+        else:
+            if fetch == True:
+                return self.c.fetchone()[0]
+            else:
+                return self.c.fetchall()[0]
+        finally:
+            self.db.close()
+            self.c.close()
 
-from config.settings import yaml_config_path
-
-f = open(yaml_config_path,encoding='utf-8')
-data =yaml.load(f,Loader=yaml.FullLoader)
-
-
-class HandleDB:
-    def __init__(self):
-        self.con = pymysql.connect(host=data['db']['host'],
-                                   user=data['db']['user'],
-                                   password=data['db']['password'],
-                                   port=data['db']['port'],
-                                   charset=data['db']['charset'],
-                                   database=data['db']['database'])
-        self.cur = self.con.cursor()
-
-    def get_one(self, sql):
-        self.con.commit()
-        self.cur.execute(sql)
-        return self.cur.fetchone()
-
-    def get_all(self, value):
-        self.con.commit()
-        self.cur.execute('SELECT * FROM member WHERE mobile_phone="{}"'.format(value))
-        return self.cur.fetchall()
-
-    def count(self, sql):
-        self.con.commit()
-        res = self.cur.execute(sql)
-        return res
-
-
-
-    def close(self):
-        self.cur.close()
-        self.con.close()
+    def delect(self):
+        print()
 
 if __name__ == '__main__':
 
-    a =HandleDB()
+    print(True is None)
+
+
 

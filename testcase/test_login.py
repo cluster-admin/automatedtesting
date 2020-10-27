@@ -10,9 +10,9 @@ import requests
 
 import ddt
 
-from common.do_excel import DoExcel
+from common.excel import DoExcel
 from common.mysql import HandleDB
-from config.excel_config import ExcelConfig
+from config.path import ExcelConfig
 
 
 @ddt.ddt()

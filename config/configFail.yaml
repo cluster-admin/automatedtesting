@@ -1,10 +1,13 @@
 
-db:
+mysql:
   host: 'dev-test-01.db.internal.forwardx.com'
   user: dev_cluster
   password: 'PqouUIyMpyU09MQT'
   port: 3306
   charset: utf8
   database: test_tcljx_rpm
+
+
+
 
 

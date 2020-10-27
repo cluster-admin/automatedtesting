@@ -1,7 +1,5 @@
-import openpyxl
-import jsonpath,openpyxl,re
-from config.settings import *
-from config.excel_config import ExcelConfig
+import openpyxl,re
+from config.path import ExcelConfig
 
 class DoExcel():
 
