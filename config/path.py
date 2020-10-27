@@ -3,10 +3,8 @@
 @author: yuyang
 @time: 2020/7/30 22:05
 """
-import os,time
 
-
-from config.settings import *
+from common.settings import *
 
 
 class ExcelConfig():

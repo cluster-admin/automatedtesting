@@ -12,7 +12,6 @@ import HTMLTestRunner
 
 import time,sys
 
-
 def run():
     # 生成测试报告HTML文件
 
@@ -29,6 +28,7 @@ def run():
         runner.run(b)
 
 if __name__ == '__main__':
+    sys.path.append('../')
     run()
 
 # C:\Users\yuyang\AppData\Local\Programs\Python\Python38\python38.zip
