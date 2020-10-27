@@ -102,4 +102,3 @@ class Robot():
 if __name__ == '__main__':
     a = Robot()
     print(a.task_status())
-    pass
