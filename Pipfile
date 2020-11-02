@@ -9,6 +9,7 @@ verify_ssl = true
 pyyaml = "*"
 autopep8 = "*"
 pylint = "*"
+jira = "*"
 
 [requires]
 python_version = "3.8"

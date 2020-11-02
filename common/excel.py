@@ -1,6 +1,6 @@
 import openpyxl,re
 from config.path import ExcelConfig
-
+import random,time
 class DoExcel():
 
     def __init__(self,file_name,sheet_name):
@@ -43,6 +43,11 @@ class DoExcel():
         self.close()
         return testdata
 
+
+
+
+
+
     def result(self,data,new,v):
         self.open()
         # 写入数据
@@ -52,34 +57,53 @@ class DoExcel():
         # 关闭工作薄
         self.close()
 
-    def updataData(self,data,phoneid=None,id=None):
+    def updataData(self,data):
+        """提取json进行更新"""
+        name=str(random.randint(100, 9999999))
+        code=str(random.randint(100, 9999999))
+        data1=str(random.randint(100, 9999999))
+        if name !=code:
+            if re.search('name',str(data)):
+                data['json'] = data['json'].replace('name',name)
+            if re.search('code',str(data)):
+                data['json'] = data['json'].replace('code',code)
+            if re.search('data',str(data)):
+                data['json'] = data['json'].replace('data',data1)
 
-        if not phoneid == None:
-            if re.search('phoneid',str(data)):
-                p  = set_phoneid()
-                data['json'] = data['json'].replace('phoneid', p)
-                data['expect'] = data['expect'].replace('phoneid', p)
 
-        if not id == None:
-            if re.search('expectid',str(data)):
-                if re.search('id',str(id)):
-                    i = id['data']['id']
 
-                    data['expect'] = data['expect'].replace('expectid', str(i))
-                    self.open()
-                    # 写入数据
-                    self.sheet.cell(data['id'] + 1, 6, data['expect'])
-                    self.sheet.cell(data['id'] + 1, 5, data['json'])
-                    # 保存文件
-                    self.workbook.save(ExcelConfig.testResuitPath)
-                    # 关闭工作薄
-                    self.close()
 
-        return data
+
+        # if not phoneid == None:
+        #     if re.search('phoneid',str(data)):
+        #         p  = set_phoneid()
+        #         data['json'] = data['json'].replace('phoneid', p)
+        #         data['expect'] = data['expect'].replace('phoneid', p)
+        #
+        # if not id == None:
+        #     if re.search('expectid',str(data)):
+        #         if re.search('id',str(id)):
+        #             i = id['data']['id']
+        #
+        #             data['expect'] = data['expect'].replace('expectid', str(i))
+        #             self.open()
+        #             # 写入数据
+        #             self.sheet.cell(data['id'] + 1, 6, data['expect'])
+        #             self.sheet.cell(data['id'] + 1, 5, data['json'])
+        #             # 保存文件
+        #             self.workbook.save(ExcelConfig.testResuitPath)
+        #             # 关闭工作薄
+        #             self.close()
+        #
+        # return data
 
 
 
 
 if __name__ == '__main__':
-    a = DoExcel(ExcelConfig.testDataPant,'Sheet1')
-    a.updataData(a.all()[1])
+    a = DoExcel(r'C:\Users\yuyang\Desktop\clusterw20201030【长荣项目】--测试报告.xlsx','测试报告')
+    b = a.all()
+
+
+
+

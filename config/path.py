@@ -9,9 +9,11 @@ from common.settings import *
 
 class ExcelConfig():
 
-    testDataPant =  os.path.dirname(os.path.dirname(__file__)) +'/data/testdata.xlsx'
+    testDataPant =  os.path.dirname(os.path.dirname(__file__)) +'/data/cluster.xlsx'
 
     testResuitPath =  os.path.dirname(os.path.dirname(__file__)) +'/data/testresult.xlsx'
 
-    headers = {"Content-Type":"application/json","X-Lemonban-Media-Type":"lemonban.v2"}
+    headers = {
+  'Content-Type': 'application/json'
+}
 

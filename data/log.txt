@@ -1,0 +1,152 @@
+[1603960437.414][INFO]: Starting ChromeDriver 85.0.4183.38 (9047dbc2c693f044042bbec5c91401c708c7c26a-refs/branch-heads/4183@{#779}) on port 61123
+[1603960437.414][INFO]: Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+[1603960437.922][INFO]: [471fd1b61f381c13239063e31b67cabc] COMMAND InitSession {
+   "capabilities": {
+      "alwaysMatch": {
+         "browserName": "chrome",
+         "goog:chromeOptions": {
+            "args": [  ],
+            "extensions": [  ]
+         },
+         "platformName": "any"
+      },
+      "firstMatch": [ {
+
+      } ]
+   },
+   "desiredCapabilities": {
+      "browserName": "chrome",
+      "goog:chromeOptions": {
+         "args": [  ],
+         "extensions": [  ]
+      },
+      "platform": "ANY",
+      "version": ""
+   }
+}
+[1603960437.926][INFO]: Populating Preferences file: {
+   "alternate_error_pages": {
+      "enabled": false
+   },
+   "autofill": {
+      "enabled": false
+   },
+   "browser": {
+      "check_default_browser": false
+   },
+   "distribution": {
+      "import_bookmarks": false,
+      "import_history": false,
+      "import_search_engine": false,
+      "make_chrome_default_for_user": false,
+      "skip_first_run_ui": true
+   },
+   "dns_prefetching": {
+      "enabled": false
+   },
+   "profile": {
+      "content_settings": {
+         "pattern_pairs": {
+            "https://*,*": {
+               "media-stream": {
+                  "audio": "Default",
+                  "video": "Default"
+               }
+            }
+         }
+      },
+      "default_content_setting_values": {
+         "geolocation": 1
+      },
+      "default_content_settings": {
+         "geolocation": 1,
+         "mouselock": 1,
+         "notifications": 1,
+         "popups": 1,
+         "ppapi-broker": 1
+      },
+      "password_manager_enabled": false
+   },
+   "safebrowsing": {
+      "enabled": false
+   },
+   "search": {
+      "suggest_enabled": false
+   },
+   "translate": {
+      "enabled": false
+   }
+}
+[1603960437.928][INFO]: Populating Local State file: {
+   "background_mode": {
+      "enabled": false
+   },
+   "ssl": {
+      "rev_checking": {
+         "enabled": false
+      }
+   }
+}
+[1603960437.952][INFO]: Cannot switch to US keyboard layout - some keys may be interpreted incorrectly
+[1603960437.952][INFO]: Launching chrome: "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --disable-background-networking --disable-client-side-phishing-detection --disable-default-apps --disable-hang-monitor --disable-popup-blocking --disable-prompt-on-repost --disable-sync --enable-automation --enable-blink-features=ShadowDOMV0 --enable-logging --log-level=0 --no-first-run --password-store=basic --remote-debugging-port=0 --test-type=webdriver --use-mock-keychain --user-data-dir="C:\Users\yuyang\AppData\Local\Temp\scoped_dir10496_488977111" data:,
+[1603960438.605][WARNING]: This version of ChromeDriver has not been tested with Chrome version 86.
+[1603960438.612][INFO]: resolved localhost to ["::1","127.0.0.1"]
+[1603960440.674][INFO]: [471fd1b61f381c13239063e31b67cabc] RESPONSE InitSession {
+   "capabilities": {
+      "acceptInsecureCerts": false,
+      "browserName": "chrome",
+      "browserVersion": "86.0.4240.111",
+      "chrome": {
+         "chromedriverVersion": "85.0.4183.38 (9047dbc2c693f044042bbec5c91401c708c7c26a-refs/branch-heads/4183@{#779})",
+         "userDataDir": "C:\\Users\\yuyang\\AppData\\Local\\Temp\\scoped_dir10496_488977111"
+      },
+      "goog:chromeOptions": {
+         "debuggerAddress": "localhost:61130"
+      },
+      "networkConnectionEnabled": false,
+      "pageLoadStrategy": "normal",
+      "platformName": "windows",
+      "proxy": {
+
+      },
+      "setWindowRect": true,
+      "strictFileInteractability": false,
+      "timeouts": {
+         "implicit": 0,
+         "pageLoad": 300000,
+         "script": 30000
+      },
+      "unhandledPromptBehavior": "dismiss and notify",
+      "webauthn:virtualAuthenticators": true
+   },
+   "sessionId": "471fd1b61f381c13239063e31b67cabc"
+}
+[1603960440.675][INFO]: [471fd1b61f381c13239063e31b67cabc] COMMAND Navigate {
+   "url": "http://admin.delivery-platform.test.internal.forwardx.com/login?redirect=%2FbasicManage%2Flogin"
+}
+[1603960440.675][INFO]: Waiting for pending navigations...
+[1603960440.679][INFO]: Done waiting for pending navigations. Status: ok
+[1603960440.808][INFO]: Waiting for pending navigations...
+[1603960441.219][INFO]: Done waiting for pending navigations. Status: ok
+[1603960441.219][INFO]: [471fd1b61f381c13239063e31b67cabc] RESPONSE Navigate
+[1603960451.229][INFO]: [471fd1b61f381c13239063e31b67cabc] COMMAND FindElement {
+   "using": "xpath",
+   "value": "//*[@name=\"pwd\"]"
+}
+[1603960451.229][INFO]: Waiting for pending navigations...
+[1603960451.232][INFO]: Done waiting for pending navigations. Status: ok
+[1603960451.244][INFO]: Waiting for pending navigations...
+[1603960451.245][INFO]: Done waiting for pending navigations. Status: ok
+[1603960451.245][INFO]: [471fd1b61f381c13239063e31b67cabc] RESPONSE FindElement {
+   "element-6066-11e4-a52e-4f735466cecf": "20138a27-8c0b-4124-b928-a7ae52157b0e"
+}
+[1603960451.246][INFO]: [471fd1b61f381c13239063e31b67cabc] COMMAND TypeElement {
+   "id": "20138a27-8c0b-4124-b928-a7ae52157b0e",
+   "text": "1111111111",
+   "value": [ "1", "1", "1", "1", "1", "1", "1", "1", "1", "1" ]
+}
+[1603960451.246][INFO]: Waiting for pending navigations...
+[1603960451.247][INFO]: Done waiting for pending navigations. Status: ok
+[1603960451.352][INFO]: Waiting for pending navigations...
+[1603960451.354][INFO]: Done waiting for pending navigations. Status: ok
+[1603960451.354][INFO]: [471fd1b61f381c13239063e31b67cabc] RESPONSE TypeElement
